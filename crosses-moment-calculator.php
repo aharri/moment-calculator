@@ -19,14 +19,22 @@
 define('DECIMALS', "10.4");
 define('PRECISION', 0.01);
 
+# Which corners to balance?
 $balance_corners = array(2,4,6);
+# Corners
 $corners = array(
-	# Beam ends
+	# Corner number 1 has one beam connected that goes to corner 2
 	1 => array(
+		# Beam ends for corner
 		2 => array(
+			# Transfer values to 2,1 ?
 			'xfer'	=> false,
+			# Multiplier. Sum of multipliers in one corner must be 1,
+			# except for corners that are not listed in $balance_corners.
 			'div'	=> 0,
+			# Starting moment
 			'moment'=> array(0),
+			# Internal, don't change
 			'printable'=>array()
 		)
 	),

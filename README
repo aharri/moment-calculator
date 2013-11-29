@@ -1,6 +1,8 @@
 Beam end moment balancer based on Cross' method.
 
 Currently this does only the balancing calculations
-you would do on paper. The benefit is that this isn't
-error prone like calculations by hand and you can also
-see interphases.
+you would do on paper. You need to calculate starting
+values (MK), multipliers (μ) and define the structure.
+The benefit is that this isn't error prone like calculations
+by hand and you can also see intermediate values (for
+checking calculations done on paper).
