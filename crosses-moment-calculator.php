@@ -23,8 +23,13 @@ require("config.php");
 
 foreach ($corners as $corner => &$beam_ends) {
 	// Add internal array
-	foreach ($beam_ends as $beam_end => &$data)
+	$i=0;
+	foreach ($beam_ends as $beam_end => &$data) {
 		$data['printable'] = array();
+		$i += $data['div'];
+	}
+	if ($i != 1)
+		print("WARNING: sum of divisors is not 1.00 ($i)\n");
 }
 unset($data);
 unset($beam_ends);

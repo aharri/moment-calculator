@@ -12,7 +12,7 @@ $corners = array(
 			'xfer'	=> false,
 			# Multiplier. Sum of multipliers in one corner must be 1,
 			# except for corners that are not listed in $balance_corners.
-			'div'	=> 0,
+			'div'	=> 1,
 			# Starting moment
 			'moment'=> array(0),
 		)
@@ -32,7 +32,7 @@ $corners = array(
 	3 => array(
 		4 => array(
 			'xfer'	=> false,
-			'div'	=> 0,
+			'div'	=> 1,
 			'moment'=> array(0),
 		)
 	),
@@ -56,7 +56,7 @@ $corners = array(
 	5 => array(
 		6 => array(
 			'xfer'	=> true,
-			'div'	=> 0,
+			'div'	=> 1,
 			'moment'=> array(0),
 		)
 	),
