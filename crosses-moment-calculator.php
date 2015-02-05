@@ -23,9 +23,11 @@ require("config.php");
 
 foreach ($corners as $corner => &$beam_ends) {
 	// Add internal array
-	foreach ($beam_ends as &$beam_end)
-		$beam_end['printable'] = array();
+	foreach ($beam_ends as $beam_end => &$data)
+		$data['printable'] = array();
 }
+unset($data);
+unset($beam_ends);
 
 while (true)
 {
