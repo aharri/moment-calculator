@@ -19,91 +19,13 @@
 define('DECIMALS', "10.4");
 define('PRECISION', 0.01);
 
-# Which corners to balance?
-$balance_corners = array(2,4,6);
-# Corners
-$corners = array(
-	# Corner number 1 has one beam connected that goes to corner 2
-	1 => array(
-		# Beam ends for corner
-		2 => array(
-			# Transfer values to 2,1 ?
-			'xfer'	=> false,
-			# Multiplier. Sum of multipliers in one corner must be 1,
-			# except for corners that are not listed in $balance_corners.
-			'div'	=> 0,
-			# Starting moment
-			'moment'=> array(0),
-			# Internal, don't change
-			'printable'=>array()
-		)
-	),
-	2 => array(
-		1 => array(
-			'xfer'	=> true,
-			'div'	=> 0.142300195,
-			'moment'=> array(0),
-			'printable'=>array()
-		),
-		4 => array(
-			'xfer'	=> true,
-			'div'	=> 0.8567998051,
-			'moment'=> array(-119.9025),
-			'printable'=>array()
-		)
-	),
-	3 => array(
-		4 => array(
-			'xfer'	=> false,
-			'div'	=> 0,
-			'moment'=> array(0),
-			'printable'=>array()
-		)
-	),
-	4 => array(
-		2 => array(
-			'xfer'	=> true,
-			'div'	=> 0.551898678,
-			'moment'=> array(+119.9025),
-			'printable'=>array()
-		),
-		3 => array(
-			'xfer'	=> true,
-			'div'	=> 0.091565008,
-			'moment'=> array(0),
-			'printable'=>array()
-		),
-		6 => array(
-			'xfer'	=> true,
-			'div'	=> 0.356536314,
-			'moment'=> array(-496.5495),
-			'printable'=>array()
-		)
-	),
-	5 => array(
-		6 => array(
-			'xfer'	=> true,
-			'div'	=> 0,
-			'moment'=> array(0),
-			'printable'=>array()
-		)
-	),
-	6 => array(
-		4 => array(
-			'xfer'	=> true,
-			'div'	=> 0.838494521,
-			'moment'=> array(393.3210),
-			'printable'=>array()
-		),
-		5 => array(
-			'xfer'	=> false,
-			'div'	=> 0.161505479,
-			'moment'=> array(0),
-			'printable'=>array()
-		)
-	)
+require("config.php");
 
-);
+foreach ($corners as $corner => &$beam_ends) {
+	// Add internal array
+	foreach ($beam_ends as &$beam_end)
+		$beam_end['printable'] = array();
+}
 
 while (true)
 {
