@@ -17,7 +17,9 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 define('DECIMALS', "10.4");
-define('PRECISION', 0.01);
+define('PRECISION', 0.001);
+
+$warnings='';
 
 require("config.php");
 
@@ -29,7 +31,7 @@ foreach ($corners as $corner => &$beam_ends) {
 		$i += $data['div'];
 	}
 	if ($i != 1)
-		print("WARNING: sum of divisors is not 1.00 ($i)\n");
+		$warnings .= sprintf("WARNING: sum of divisors is $i (and not 1.00) in corner $corner\n");
 }
 unset($data);
 unset($beam_ends);
@@ -86,5 +88,7 @@ foreach ($corners as $corner => $beam_ends) {
 		printf ("\nSum:\t%".DECIMALS."f\n\n", $sum);
 	}
 }
+
+echo "$warnings";
 
 ?>
