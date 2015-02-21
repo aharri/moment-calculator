@@ -39,7 +39,7 @@ unset($beam_ends);
 while (true)
 {
 	$high_crn = 0;
-	$high_blc = false;
+	$high_blc = 0;
 	foreach ($corners as $corner => $beam_ends) {
 		$balance = 0;
 		foreach ($beam_ends as $beam_end => $data) {
