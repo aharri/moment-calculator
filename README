@@ -6,3 +6,8 @@ values (MK), multipliers (μ) and define the structure.
 The benefit is that this isn't error prone like calculations
 by hand and you can also see intermediate values (for
 checking calculations done on paper).
+
+There are two versions, one for PHP which is a bit more
+complete and one for MathCAD that gets the job done too.
+MathCAD version doesn't have verbose outputing, just the
+calculations.
